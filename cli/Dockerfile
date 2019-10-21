@@ -18,5 +18,6 @@ RUN apt-get update && apt-get -y --no-install-recommends install curl \
   && rm docker-${DOCKERVERSION}.tgz \
   && rm -rf /var/lib/apt/lists/*
 
+RUN gcloud components install beta --quiet
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
